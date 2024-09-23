@@ -1,8 +1,38 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TextInput, Image, TouchableOpacity } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
+import { useState } from 'react';
 
 export default function LoginScreen() {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState(null);
+
+  const handleLogin = () => {
+    try {
+      const usersData = require('../database/users.json');
+      const users = usersData.users; // Access the users property
+      if (!Array.isArray(users)) {
+        console.error('El contenido del archivo users.json no es un array');
+        setError('Error leyendo archivo users.json');
+        return;
+      }
+      const userFound = users.find((user) => user.username === username && user.password === password);
+      if (userFound) {
+        // Si el usuario existe, redirigir al home
+        navigation.navigate('Home', {screen: 'Home'});
+      } else {
+        // Si el usuario no existe, mostrar error y redirigir a register
+        setError('Usuario o contraseña incorrectos');
+        navigation.navigate('Register');
+      }
+    } catch (error) {
+      console.error('Error leyendo archivo users.json:', error);
+      setError('Error leyendo archivo users.json');
+      return;
+    }
+  };
+  
   return (
     <View style={styles.container}>
       {/* Cambié la carga de la imagen para usar require */}
@@ -22,7 +52,7 @@ export default function LoginScreen() {
         secureTextEntry
       />
 
-      <TouchableOpacity style={styles.boton}>
+      <TouchableOpacity style={styles.boton} onPress={handleLogin}>
         <Text style={styles.botonTexto}>Ingresar</Text>
       </TouchableOpacity>
     </View>

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, TextInput, Button } from "react-native";
+import {StyleSheet, View, Text, TextInput, Button } from "react-native";
 
 const RegisterScreen = ({ navigation }) => {
   const [username, setUsername] = useState("");
