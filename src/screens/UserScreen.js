@@ -1,11 +1,10 @@
-import { View, Text } from "react-native-web"
+import React from "react";
+import { View, Text } from "react-native";
 
-const UserScreen =({})=> {
-    return(
-        <View>
-         <Text>Esto es Users</Text>   
-        </View>
-    )
-} 
+const ProfileScreen = () => (
+  <View>
+    <Text>Perfil</Text>
+  </View>
+);
 
-export default UserScreen;
+export default ProfileScreen;

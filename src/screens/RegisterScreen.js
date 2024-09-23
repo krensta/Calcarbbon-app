@@ -1,26 +1,34 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, TextInput, Image } from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient';
+import React, { useState } from "react";
+import { View, Text, TextInput, Button } from "react-native";
 
+const RegisterScreen = ({ navigation }) => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
-export default function RegisterScreen() {
-  //La imagen no aparece en el emulador
+  const handleRegister = () => {
+    
+    alert("Registro exitoso, redirigiendo al login");
+    navigation.navigate("Login");
+  };
+
   return (
-    <View style={styles.container}>
-      <Image source={{uri:'../assets/images/logo.png'}}/>
-      <Text style={styles.titulo}>Inicia sesión</Text>
-      <StatusBar style="auto" />
-      <TextInput
-      placeholder='Email'
-      style={styles.Insput}
+    <View>
+      <Text>Registro</Text>
+      <TextInput 
+        placeholder="Username" 
+        value={username} 
+        onChangeText={setUsername} 
       />
-       <TextInput
-      placeholder='Contraseña'
-      style={styles.Insput}
+      <TextInput 
+        placeholder="Password" 
+        value={password} 
+        onChangeText={setPassword} 
+        secureTextEntry 
       />
+      <Button title="Registrarse" onPress={handleRegister} />
     </View>
-);
-}
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -29,19 +37,40 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  logo: {
+    width: 100, 
+    height: 100,
+    marginBottom: 20,
+  },
   titulo: {
     fontSize: 35,
-    color: '000',
+    color: '#000', 
+    fontWeight: 'bold',
+    marginBottom: 20,
+  },
+  input: {
+    fontSize: 15,
+    backgroundColor: '#9bb46e',
+    paddingStart: 20,
+    padding: 10,
+    width: "80%",  // Más ancho para mejorar la UI
+    height: 50,
+    marginTop: 20,
+    borderRadius: 30,
+  },
+  boton: {
+    backgroundColor: '#6d8821',
+    padding: 15,
+    borderRadius: 30,
+    width: '80%',
+    alignItems: 'center',
+    marginTop: 30,
+  },
+  botonTexto: {
+    color: '#fff',
+    fontSize: 18,
     fontWeight: 'bold',
   },
-  Insput: {
-   fontSize: 15,
-   backgroundColor: '#9bb46e',
-   paddingStart: 20,
-   padding: 10,
-   width: "65%",
-   height: 50,
-   marginTop: 20,
-   borderRadius: 30,
-  }
 });
+
+export default RegisterScreen;

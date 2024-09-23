@@ -1,18 +1,13 @@
-import { useEffect } from "react";
-import { View, Text } from "react-native-web"
+import React from "react";
+import { View, Text, ActivityIndicator } from "react-native";
 
-const SplashScreen =({ navigation })=> {
-    useEffect (() => {
-        const timer = setTimeout (() => {
-            navigation.replace ('Login')
-        }, 2000);
-        return () => clearTimeout(timer)
-    }, [navigation]);
-    return(
-        <View>
-         <Text>Esto es un splash</Text>   
-        </View>
-    )
-} 
+const SplashScreen = () => {
+  return (
+    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+      <Text>Cargando...</Text>
+      <ActivityIndicator size="large" color="#0000ff" />
+    </View>
+  );
+};
 
 export default SplashScreen;

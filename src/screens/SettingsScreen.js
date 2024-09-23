@@ -1,12 +1,10 @@
-import { Settings } from "react-native";
-import { View, Text } from "react-native-web"
+import React from "react";
+import { View, Text } from "react-native";
 
-const SettingsScreen =({})=> {
-    return(
-        <View>
-         <Text>Esto es un Settings</Text>   
-        </View>
-    )
-} 
+const SettingsScreen = () => (
+  <View>
+    <Text>Ajustes</Text>
+  </View>
+);
 
 export default SettingsScreen;
