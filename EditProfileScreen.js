@@ -69,15 +69,6 @@ const EditProfileScreen = ({ navigation }) => {
         </TouchableOpacity>
       </View>
 
-      {/* Otras configuraciones */}
-      <Text style={styles.sectionTitle}>Otras configuraciones</Text>
-
-      {/* Notificaciones */}
-      <TouchableOpacity style={styles.row}>
-        <Text style={styles.label}>Notificaciones</Text>
-      </TouchableOpacity>
-
-     
       <TouchableOpacity style={styles.logoutButton} onPress={handleLogout}>
         <Text style={styles.logoutText}>Cerrar sesión</Text>
       </TouchableOpacity>
@@ -95,13 +86,13 @@ const styles = StyleSheet.create({
   subtitle: {
     fontSize: 24,
     fontWeight: 'bold',
-    color: '#FFF',
+    color: '#000',
     textAlign: 'center',
     marginBottom: 20,
   },
   sectionTitle: {
     fontSize: 18,
-    color: '#FFF',
+    color: '#68803f',
     marginTop: 20,
     marginBottom: 10,
     fontWeight: 'bold',
@@ -110,9 +101,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    backgroundColor: '#B35A56',
+    backgroundColor: '#9bb46e',
     padding: 15,
-    borderRadius: 10,
+    borderRadius: 30,
     marginBottom: 10,
   },
   info: {
@@ -128,24 +119,25 @@ const styles = StyleSheet.create({
     marginTop: 5,
   },
   editButton: {
-    backgroundColor: '#E97C71',
+    backgroundColor: '#68803f',
     padding: 8,
-    borderRadius: 5,
+    borderRadius: 10,
   },
   editText: {
     color: '#FFF',
     fontSize: 14,
   },
   logoutButton: {
-    backgroundColor: '#A72C2A',
+    backgroundColor: '#68803f',
     padding: 15,
-    borderRadius: 10,
+    borderRadius: 20,
     alignItems: 'center',
-    marginTop: 20,
+    marginTop: 40,
   },
   logoutText: {
     color: '#FFF',
     fontSize: 16,
+    fontWeight: 'bold',
   },
 });
 

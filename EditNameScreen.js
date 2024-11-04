@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
   },
   headerTitle: {
     fontSize: 20,
-    color: '#FFF',
+    color: '#68803f',
     fontWeight: 'bold',
     marginLeft: 10,
   },
@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
     color: '#333',
   },
   saveButton: {
-    backgroundColor: '#B35A56', // Color del botón en el diseño
+    backgroundColor: '#68803f', // Color del botón en el diseño
     paddingVertical: 15,
     borderRadius: 25,
     alignItems: 'center',

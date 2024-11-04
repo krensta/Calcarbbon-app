@@ -13,18 +13,18 @@ const ProfileScreen = ({ navigation }) => {
         </TouchableOpacity>
       </View>
 
-      <View style={styles.card}>
-        <Text style={styles.subtitle}>Estas en nivel 1</Text>
-        <Text style={styles.expText}>Tus EXP: 125</Text>
-      </View>
-
       <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Mis logros</Text>
+      <TouchableOpacity onPress={() => navigation.navigate('EditProfile')}>
+      <Text style={styles.sectionTitle}>Mis recomendaciones</Text>
+        </TouchableOpacity>
         {/* Coloca aquí tus componentes visuales para los logros */}
       </View>
 
       <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Mis premios</Text>
+      <TouchableOpacity onPress={() => navigation.navigate('ResultsScreen')}>
+      <Text style={styles.sectionTitle}>Mis resultados</Text>
+        </TouchableOpacity>
+        
         {/* Coloca aquí tus componentes visuales para los premios */}
       </View>
 
@@ -36,7 +36,7 @@ const ProfileScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#9A2C2B', // Usando el color principal del tema
+    backgroundColor: '#cde491', // Usando el color principal del tema
     padding: 20,
   },
   header: {
@@ -44,18 +44,15 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   title: {
-    fontSize: 24,
-    color: '#FFF0ED', // Color de texto variante
+    fontSize: 30,
+    color: '#000', // Color de texto variante
+    fontWeight: 'bold',
+    padding: 10,
   },
   editButton: {
-    color: '#FFF',
+    color: '#68803f',
     fontSize: 16,
-  },
-  card: {
-    backgroundColor: '#FFD1CA',
-    padding: 20,
-    borderRadius: 10,
-    marginVertical: 10,
+    fontWeight: 'bold',
   },
   subtitle: {
     fontSize: 18,
@@ -70,9 +67,11 @@ const styles = StyleSheet.create({
   },
   sectionTitle: {
     fontSize: 18,
-    color: '#FFF',
+    color: '#68803f',
     marginBottom: 10,
+    borderRadius: 30,
   },
+  //Revisar
   logoutButton: {
     marginTop: 30,
     backgroundColor: '#E74C3C', // Color para el botón de cerrar sesión
@@ -81,7 +80,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   logoutText: {
-    color: '#FFF',
+    color: '#68803f',
     fontSize: 16,
   },
 });
