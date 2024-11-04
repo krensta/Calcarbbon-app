@@ -4,9 +4,9 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import HomeScreen from '../screens/HomeScreen';
-import LearnScreen from '../screens/LearnScreen';
+import QuestionScreen from '../screens/QuestionScreen';
 import ProfileScreen from '../screens/ProfileScreen';
-import RewardsScreen from '../screens/RewardsScreen';
+import ResultsScreen from '../screens/ResultsScreen';
 import LoginScreen from '../screens/LoginScreen';
 import RegisterScreen from '../screens/RegisterScreen';
 import SplashScreen from '../screens/SplashScreen';
@@ -30,22 +30,22 @@ const TabNavigator = () => (
       tabBarActiveTintColor: colors.luminous, // Íconos activos
       tabBarInactiveTintColor: colors.variante3, // Íconos inactivos
     }}>
-    <Tab.Screen name="Home" component={HomeScreen} options={{
+    <Tab.Screen name="Inicio" component={HomeScreen} options={{
         tabBarIcon: ({ color, size }) => (
           <MaterialIcons name="home" color={color} size={size} />
         ),
       }} />
-    <Tab.Screen name="Learn" component={LearnScreen} options={{
+    <Tab.Screen name="Cuestionario" component={QuestionScreen} options={{
         tabBarIcon: ({ color, size }) => (
-          <MaterialIcons name="school" color={color} size={size} />
+          <MaterialIcons name="assignment" color={color} size={size} />
         ),
       }} />
-    <Tab.Screen name="Rewards" component={RewardsScreen} options={{
+    <Tab.Screen name="Resultados" component={ResultsScreen} options={{
         tabBarIcon: ({ color, size }) => (
-          <MaterialIcons name="emoji-events" color={color} size={size} />
+          <MaterialIcons name="analytics" color={color} size={size} />
         ),
       }} />
-    <Tab.Screen name="Profile" component={ProfileScreen} options={{
+    <Tab.Screen name="Perfil" component={ProfileScreen} options={{
         tabBarIcon: ({ color, size }) => (
           <MaterialIcons name="person" color={color} size={size} />
         ),
@@ -66,6 +66,8 @@ const AppNavigator = () => (
       <Stack.Screen name="EditName" component={EditNameScreen} options={{ headerTitle: 'Editar nombre', headerShown: true }} />
       <Stack.Screen name="EditEmail" component={EditEmailScreen} options={{ headerTitle: 'Editar correo electrónico', headerShown: true }} />
       <Stack.Screen name="EditPassword" component={ChangePasswordScreen} options={{ headerTitle: 'Cambiar contraseña', headerShown: true }} />
+      
+      <Stack.Screen name="ResultsScreen" component={ResultsScreen} options={{headerShown: false}}/>
     </Stack.Navigator>
   </NavigationContainer>
 );
